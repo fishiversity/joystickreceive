@@ -1,21 +1,32 @@
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+        OLED.clear()
+        OLED.writeStringNewLine("You pressed A")
+    }
+    if (receivedNumber == 1) {
+        OLED.clear()
+        OLED.writeStringNewLine("You pressed B")
+    }
+})
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "C") {
         OLED.clear()
-        OLED.writeStringNewLine("You Pressed C")
+        OLED.writeStringNewLine("LEFT")
     }
     if (receivedString == "D") {
         OLED.clear()
-        OLED.writeStringNewLine("You Pressed D")
+        OLED.writeStringNewLine("UP")
     }
     if (receivedString == "E") {
         OLED.clear()
-        OLED.writeStringNewLine("You Pressed E")
+        OLED.writeStringNewLine("DOWN")
     }
     if (receivedString == "F") {
         OLED.clear()
-        OLED.writeStringNewLine("You Pressed F")
+        OLED.writeStringNewLine("RIGHT")
     }
 })
 OLED.init(128, 64)
+radio.setGroup(1)
 basic.showIcon(IconNames.Yes)
 basic.showString("R")
